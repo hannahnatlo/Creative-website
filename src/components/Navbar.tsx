@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-const links = ['Home', 'About', 'Services', 'Contact']
+const links = ['Home', 'Menu', 'Story', 'Visit']
 
 export default function Navbar() {
   const [active, setActive] = useState('Home')
@@ -28,7 +28,7 @@ export default function Navbar() {
         {links.map((link) => (
           <a
             key={link}
-            href={`#${link.toLowerCase()}`}
+            href={link === 'Menu' ? 'https://www.cosetta.net/menu' : `#${link.toLowerCase()}`}
             onClick={() => setActive(link)}
             style={{
               position: 'relative',

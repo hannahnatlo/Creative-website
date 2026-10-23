@@ -2,28 +2,19 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden' }}>
-      {/* Video Background */}
-      <video
-        style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-        }}
-        src={`${import.meta.env.BASE_URL}hero-video.mp4`}
-        autoPlay
-        muted
-        loop
-        playsInline
+    <section id="home" style={{ position: 'relative', width: '100%', minHeight: '100svh', height: '100vh', overflow: 'hidden' }}>
+      <img
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+        src={`${import.meta.env.BASE_URL}cosetta-hero.jpg`}
+        alt="Fresh Italian panini at Cosetta"
+        fetchPriority="high"
       />
 
       {/* Overlay */}
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'rgba(0,0,0,0.28)',
+        background: 'linear-gradient(180deg, rgba(10,22,36,0.25), rgba(10,22,36,0.58))',
       }} />
 
       {/* Content */}
@@ -44,7 +35,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
           style={{
             fontFamily: '"Cormorant Garamond", Georgia, serif',
-            fontSize: 'clamp(3rem, 8vw, 6.5rem)',
+            fontSize: 'clamp(3rem, 7vw, 6.5rem)',
             fontWeight: 600,
             color: '#fff',
             letterSpacing: '-0.04em',
@@ -53,7 +44,7 @@ export default function Hero() {
             margin: 0,
           }}
         >
-          Build Stunning<br /><em style={{ fontStyle: 'italic' }}>Websites</em> with AI
+          Cosetta<br /><em style={{ fontStyle: 'italic' }}>Paninoteca &amp; Pizzeria</em>
         </motion.h1>
 
         <motion.p
@@ -63,23 +54,23 @@ export default function Hero() {
           style={{
             marginTop: '24px',
             fontSize: '1.125rem',
-            color: 'rgba(255,255,255,0.7)',
+            color: 'rgba(255,255,255,0.9)',
             maxWidth: '480px',
             lineHeight: 1.6,
           }}
         >
-          Design, develop, and deploy beautiful digital experiences — faster than ever before.
+          Italian comfort in the heart of Fairfield. Panini, pizza, and espresso — made for your everyday table.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9, ease: 'easeOut' }}
-          style={{ marginTop: '40px', display: 'flex', gap: '12px' }}
+          style={{ marginTop: '40px', display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}
         >
-          <button
+          <a href="https://order.toasttab.com/online/cosetta-paninoteca-1560-post-rd"
             style={{
-              padding: '14px 32px',
+              padding: '14px 28px', textDecoration: 'none',
               borderRadius: '999px',
               background: '#fff',
               color: '#000',
@@ -93,11 +84,11 @@ export default function Hero() {
             onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.9)')}
             onMouseLeave={e => (e.currentTarget.style.background = '#fff')}
           >
-            Get Started
-          </button>
-          <button
+            Order Online
+          </a>
+          <a href="https://www.cosetta.net/menu"
             style={{
-              padding: '14px 32px',
+              padding: '14px 28px', textDecoration: 'none',
               borderRadius: '999px',
               background: 'transparent',
               color: '#fff',
@@ -110,8 +101,8 @@ export default function Hero() {
             onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.1)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
           >
-            Learn More
-          </button>
+            View Menu
+          </a>
         </motion.div>
       </div>
     </section>
